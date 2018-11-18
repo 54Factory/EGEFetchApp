@@ -7,12 +7,9 @@ import { LocaleProvider } from "antd";
 import { IntlProvider } from "react-intl";
 import themes from "./settings/themes";
 import AppLocale from "./languageProvider";
-import config, {
-  getCurrentLanguage
-} from "./containers/LanguageSwitcher/config";
+import config, { getCurrentLanguage } from "./containers/LanguageSwitcher/config";
 import { themeConfig } from "./settings";
 import DashAppHolder from "./dashAppStyle";
-import Boot from "./redux/boot";
 
 const initialState = window.__INITIAL_STATE__ || { firebase: { authError: null } }
 const store = configureStore(initialState)
@@ -36,9 +33,7 @@ const DashApp = () => (
     </IntlProvider>
   </LocaleProvider>
 );
-Boot()
-  .then(() => DashApp())
-  .catch(error => console.error(error));
+
 
 export default DashApp;
 export { AppLocale, store };

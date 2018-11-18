@@ -2,7 +2,7 @@
  * Created by leoliew on 2016/11/30.
  */
 import React from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardTitle, CardText} from 'material-ui/Card';
 
 const styles = {
   div: {
