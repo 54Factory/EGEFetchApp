@@ -10,7 +10,10 @@ import { themeConfig } from "../../settings";
 const { Header } = Layout;
 const { toggleCollapsed } = appActions;
 const customizedTheme = themes[themeConfig.theme];
-
+const mapState = (state) => ({
+  uid: state.firebase.auth.uid,
+  user: state.firebase.profile
+})
 class Topbar extends Component {
   render() {
     const { toggleCollapsed } = this.props;
@@ -53,9 +56,6 @@ class Topbar extends Component {
   }
 }
 
-export default connect(
-  state => ({
-    ...state.App
-  }),
+export default connect(mapState,
   { toggleCollapsed }
 )(Topbar);

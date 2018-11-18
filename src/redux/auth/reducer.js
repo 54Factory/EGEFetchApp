@@ -1,18 +1,18 @@
-import { LOGIN_USER, SIGN_OUT_USER } from './authConstants'
+import { LOGIN, SIGN_OUT_USER } from './authConstants'
 import { createReducer } from '../reduxHelper';
 
 const initialState = {
   currentUser: {}
 }
 
-export const loginUser = (state, payload) => {
+export const login = (state, user) => {
   console.log('====================================');
-  console.log(state);
+  console.log(user);
   console.log('====================================');
   return {
     ...state,
     authenticated: true,
-    currentUser: payload.creds.email
+    currentUser: user.creds.email
   }
 
 }
@@ -27,7 +27,7 @@ export const signOutUser = (state, payload) => {
 
 
 export default createReducer(initialState, {
-  [LOGIN_USER]: loginUser,
+  [LOGIN]: login,
   [SIGN_OUT_USER]: signOutUser
 })
 // import actions from './actions';

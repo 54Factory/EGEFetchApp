@@ -4,6 +4,7 @@ import {reducer as toastrReducer} from 'react-redux-toastr'
 import authReducer from './auth/reducer';
 
 
+
 const rootReducer = combineReducers({
   form: FormReducer,
   auth: authReducer,
