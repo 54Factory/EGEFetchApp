@@ -175,8 +175,8 @@ class Sidebar extends Component {
 
 export default connect(
   state => ({
-    app: state.App,
-    height: state.App.height
+    app: state.app,
+    height: state.app.height
   }),
   { toggleOpenDrawer, changeOpenKeys, changeCurrent, toggleCollapsed }
 )(Sidebar);

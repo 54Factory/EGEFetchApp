@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
-import { connect } from 'react-redux';
 
 import App from './containers/App/App';
 import asyncComponent from './helpers/AsyncFunc';
@@ -52,6 +51,4 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
   );
 };
 
-export default connect(state => ({
-  isLoggedIn: state.Auth.idToken !== null
-}))(PublicRoutes);
+export default (PublicRoutes);

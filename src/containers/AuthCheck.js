@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import LayoutContentWrapper from '../components/utility/layoutWrapper';
 import LayoutContent from '../components/utility/layoutContent';
 import Button from '../components/uielements/button';
@@ -31,9 +30,4 @@ class AuthCheck extends Component {
     );
   }
 }
-export default connect(
-  state => ({
-    idToken: state.Auth.idToken,
-  }),
-  {}
-)(AuthCheck);
+export default (AuthCheck);

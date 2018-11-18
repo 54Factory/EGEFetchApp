@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import Input from '../../components/uielements/input';
 import Checkbox from '../../components/uielements/checkbox';
 import Button from '../../components/uielements/button';
-import authAction from '../../redux/auth/actions';
+import {login} from '../../redux/auth/actions';
 import IntlMessages from '../../components/utility/intlMessages';
 import SignInStyleWrapper from './signin.style';
 
-const { login } = authAction;
+
 
 class SignIn extends Component {
   
