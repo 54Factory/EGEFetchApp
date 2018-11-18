@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import { borderRadius } from '../../settings/style-util';
+import { borderRadius } from '../../settings/style/style-util';
 
 export default ComponentName => styled(ComponentName)`
   .ant-modal-header {

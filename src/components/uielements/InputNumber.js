@@ -1,8 +1,8 @@
 import { InputNumber } from 'antd';
 import AntInputNumber from './styles/inputNumber.style';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const WDInputnumber = AntInputNumber(InputNumber);
-const Inputnumber = WithDirection(WDInputnumber);
+const Inputnumber = style(WDInputnumber);
 
 export default Inputnumber;

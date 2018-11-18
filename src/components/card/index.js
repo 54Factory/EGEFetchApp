@@ -7,10 +7,10 @@ import './card.css';
 import { CardInfoWrapper, InfoFormWrapper } from './cardModal.style';
 import { InputWrapper } from '../uielements/styles/input.style';
 import Modals from './modal.style';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const WDModal = Modals(isoModal);
-const Modal = WithDirection(WDModal);
+const Modal = style(WDModal);
 
 const InputField = InputWrapper(Input);
 

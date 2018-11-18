@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { store, history } from "./redux/store";
+import configureStore, { history } from "./redux/store";
 import PublicRoutes from "./router";
 import { ThemeProvider } from "styled-components";
 import { LocaleProvider } from "antd";
@@ -13,6 +13,9 @@ import config, {
 import { themeConfig } from "./settings";
 import DashAppHolder from "./dashAppStyle";
 import Boot from "./redux/boot";
+
+const initialState = window.__INITIAL_STATE__ || { firebase: { authError: null } }
+const store = configureStore(initialState)
 
 const currentAppLocale =
   AppLocale[getCurrentLanguage(config.defaultLanguage || "english").locale];
@@ -38,4 +41,4 @@ Boot()
   .catch(error => console.error(error));
 
 export default DashApp;
-export { AppLocale };
+export { AppLocale, store };

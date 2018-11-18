@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import { transition, borderRadius } from '../../settings/style-util';
-import WithDirection from '../../settings/withDirection';
+import { transition, borderRadius } from '../../settings/style/style-util';
+import style from '../../settings/style/withDirection';
 
 const SidebarWrapper = styled.div`
   .isomorphicSidebar {
@@ -262,4 +262,4 @@ const SidebarWrapper = styled.div`
   }
 `;
 
-export default WithDirection(SidebarWrapper);
+export default style(SidebarWrapper);

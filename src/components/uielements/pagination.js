@@ -1,8 +1,8 @@
 import { Pagination } from 'antd';
 import AntPagination from './styles/pagination.style';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const Paginations = AntPagination(Pagination);
-const isoPagination = WithDirection(Paginations);
+const isoPagination = style(Paginations);
 
 export default isoPagination;

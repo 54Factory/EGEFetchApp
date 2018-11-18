@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import { borderRadius, transition } from '../../settings/style-util';
-import WithDirection from '../../settings/withDirection';
+import { borderRadius, transition } from '../../settings/style/style-util';
+import style from '../../settings/style/withDirection';
 
 const SingleMailContents = styled.div`
   display: flex;
@@ -227,10 +227,10 @@ const WDSingleMailReply = styled.div`
   }
 `;
 
-const SingleMailHeader = WithDirection(WDSingleMailHeader);
-const SingleMailInfo = WithDirection(WDSingleMailInfo);
-const SingleMailBody = WithDirection(WDSingleMailBody);
-const SingleMailReply = WithDirection(WDSingleMailReply);
+const SingleMailHeader = style(WDSingleMailHeader);
+const SingleMailInfo = style(WDSingleMailInfo);
+const SingleMailBody = style(WDSingleMailBody);
+const SingleMailReply = style(WDSingleMailReply);
 
 export {
   SingleMailContents,

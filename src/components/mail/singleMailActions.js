@@ -11,7 +11,7 @@ import {
   MailPaginationWrapper,
   MailActionDropdown
 } from './singleMailActions.style';
-import { rtl } from '../../settings/withDirection';
+import { rtl } from '../../settings/style/withDirection';
 
 class DeleteButton extends Component {
   render() {

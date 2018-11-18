@@ -1,6 +1,6 @@
 import { AutoComplete } from 'antd';
 import { AntAutoComplete } from './styles/autoComplete.style';
-import WithDirection from '../../settings/withDirection';
+import WithDirection from '../../settings/style/withDirection';
 
 const WDAutoCompletes = AntAutoComplete(AutoComplete);
 const AutoCompletes = WithDirection(WDAutoCompletes);

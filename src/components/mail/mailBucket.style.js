@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import { transition } from '../../settings/style-util';
-import WithDirection from '../../settings/withDirection';
+import { transition } from '../../settings/style/style-util';
+import style from '../../settings/style/withDirection';
 
 const MailBucket = styled.ul`
   padding: 35px 0 0;
@@ -55,4 +55,4 @@ const MailBucket = styled.ul`
   }
 `;
 
-export default WithDirection(MailBucket);
+export default style(MailBucket);

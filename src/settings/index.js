@@ -16,20 +16,8 @@ const themeConfig = {
 const language = 'english';
 
 const jwtConfig = {
-  fetchUrl: '/api/',
+  fetchUrl: '/api/', 
   secretKey: 'secretKey',
 };
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAvcV_EpgXh43F6NHDSAqvTyo_ii7nltO4",
-  authDomain: "fetch-fa6c9.firebaseapp.com",
-  databaseURL: "https://fetch-fa6c9.firebaseio.com",
-  projectId: "fetch-fa6c9",
-  storageBucket: "fetch-fa6c9.appspot.com",
-  messagingSenderId: "109753455164"
-};
-const googleConfig = {
-  apiKey: 'AIzaSyDXxVaYUsyLRtok2GdPxTmDeogOZpQcVMo' //
-};
-
-export { siteConfig, language, themeConfig, jwtConfig, firebaseConfig, googleConfig };
+export { siteConfig, language, themeConfig, jwtConfig };

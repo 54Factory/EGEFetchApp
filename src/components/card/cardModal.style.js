@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -68,6 +68,6 @@ const WDInfoFormWrapper = styled.div`
   }
 `;
 
-const InfoFormWrapper = WithDirection(WDInfoFormWrapper);
+const InfoFormWrapper = style(WDInfoFormWrapper);
 
 export { ButtonWrapper, CardInfoWrapper, InfoFormWrapper };

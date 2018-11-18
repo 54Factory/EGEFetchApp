@@ -2,7 +2,7 @@ import React from 'react';
 import { Alert } from 'antd';
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const AntAlert = props => <Alert {...props} />;
 
@@ -67,4 +67,4 @@ const Alerts = styled(AntAlert)`
   }
 `;
 
-export default WithDirection(Alerts);
+export default style(Alerts);

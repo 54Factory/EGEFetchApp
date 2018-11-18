@@ -1,9 +1,9 @@
 import { Select } from 'antd';
 import { AntSelect } from './styles/select.style';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const WDSelect = AntSelect(Select);
-const isoSelect = WithDirection(WDSelect);
+const isoSelect = style(WDSelect);
 const SelectOption = Select.Option;
 
 export default isoSelect;

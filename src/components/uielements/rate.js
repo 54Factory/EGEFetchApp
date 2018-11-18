@@ -1,7 +1,7 @@
 import { Rate } from 'antd';
 import Ratings from './styles/rating.style';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const AntRating = Ratings(Rate);
-const Rating = WithDirection(AntRating);
+const Rating = style(AntRating);
 export default Rating;

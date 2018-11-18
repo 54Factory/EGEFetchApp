@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MailPagination from './mailPagination.style';
-import { rtl } from '../../settings/withDirection';
+import { rtl } from '../../settings/style/withDirection';
 
 export default class extends Component {
   render() {

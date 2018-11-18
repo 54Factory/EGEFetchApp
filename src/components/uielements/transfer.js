@@ -1,8 +1,8 @@
 import { Transfer } from 'antd';
 import AntTransfer from './styles/transfer.style';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const WDTransfers = AntTransfer(Transfer);
-const Transfers = WithDirection(WDTransfers);
+const Transfers = style(WDTransfers);
 
 export default Transfers;

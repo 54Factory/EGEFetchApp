@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const WDComponentTitleWrapper = styled.h1`
   font-size: 19px;
@@ -39,5 +39,5 @@ const WDComponentTitleWrapper = styled.h1`
   }
 `;
 
-const ComponentTitleWrapper = WithDirection(WDComponentTitleWrapper);
+const ComponentTitleWrapper = style(WDComponentTitleWrapper);
 export { ComponentTitleWrapper };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import { transition, borderRadius, boxShadow } from '../../settings/style-util';
+import { transition, borderRadius, boxShadow } from '../../settings/style/style-util';
 
 const ComposeForm = styled.div`
   padding: 35px;

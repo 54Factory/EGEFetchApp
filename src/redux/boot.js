@@ -1,4 +1,4 @@
-import { store } from './store';
+import { store } from '../dashApp';
 import authActions from './auth/actions';
 
 export default () =>

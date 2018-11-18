@@ -2,7 +2,7 @@ import React from 'react';
 import { timeDifference } from '../../helpers/utility';
 import { tags, tagColor } from './mailTags.js';
 import MailListWrapper from './mailList.style';
-import { rtl } from '../../settings/withDirection';
+import { rtl } from '../../settings/style/withDirection';
 
 export default function mailList(
   mails,

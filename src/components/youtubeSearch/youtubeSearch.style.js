@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import { borderRadius, transition } from '../../settings/style-util';
-import WithDirection from '../../settings/withDirection';
+import { borderRadius, transition } from '../../settings/style/style-util';
+import style from '../../settings/style/withDirection';
 
 const WDYoutubeSearchListStyleWrapper = styled.div`
   width: 100%;
@@ -197,7 +197,7 @@ const YoutubeModal = ComponentName => styled(ComponentName)`
   }
 `;
 
-const YoutubeSearchListStyleWrapper = WithDirection(
+const YoutubeSearchListStyleWrapper = style(
   WDYoutubeSearchListStyleWrapper
 );
 

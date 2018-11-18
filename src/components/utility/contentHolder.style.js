@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import WithDirection from '../../settings/withDirection';
+import style from '../../settings/style/withDirection';
 
 const WDContentHolderWrapper = styled.div`
   margin-top: 30px;
@@ -98,6 +98,6 @@ const WDContentHolderWrapper = styled.div`
   }
 `;
 
-const ContentHolderWrapper = WithDirection(WDContentHolderWrapper);
+const ContentHolderWrapper = style(WDContentHolderWrapper);
 
 export { ContentHolderWrapper };

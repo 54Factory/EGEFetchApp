@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import { borderRadius, transition } from '../../settings/style-util';
-import WithDirection from '../../settings/withDirection';
+import { borderRadius, transition } from '../../settings/style/style-util';
+import style from '../../settings/style/withDirection';
 
 const MailTagsList = styled.ul`
   padding: 30px 0;
@@ -58,4 +58,4 @@ const MailTagsList = styled.ul`
   }
 `;
 
-export default WithDirection(MailTagsList);
+export default style(MailTagsList);

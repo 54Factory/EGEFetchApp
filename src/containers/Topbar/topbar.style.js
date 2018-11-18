@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { palette } from "styled-theme";
-import { transition, borderRadius, boxShadow } from "../../settings/style-util";
-import WithDirection from "../../settings/withDirection";
+import { transition, borderRadius, boxShadow } from "../../settings/style/style-util";
+import style from "../../settings/style/withDirection";
 
 const TopbarWrapper = styled.div`
   .isomorphicTopbar {
@@ -489,4 +489,4 @@ const TopbarWrapper = styled.div`
   }
 `;
 
-export default WithDirection(TopbarWrapper);
+export default style(TopbarWrapper);

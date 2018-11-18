@@ -4,7 +4,7 @@ import {
   transition,
   borderRadius,
   boxShadow,
-} from '../../../settings/style-util';
+} from '../../../settings/style/style-util';
 
 const AntTransfer = ComponentName => styled(ComponentName)`
   display: flex;

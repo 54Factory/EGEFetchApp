@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import { transition } from '../../settings/style-util';
-import WithDirection from '../../settings/withDirection';
+import { transition } from '../../settings/style/style-util';
+import style from '../../settings/style/withDirection';
 
 const TopbarCartWrapper = styled.div`
   width: 100%;
@@ -86,4 +86,4 @@ const TopbarCartWrapper = styled.div`
   }
 `;
 
-export default WithDirection(TopbarCartWrapper);
+export default style(TopbarCartWrapper);

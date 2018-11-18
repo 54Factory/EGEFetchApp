@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { borderRadius } from '../settings/style-util';
-import WithDirection from '../settings/withDirection';
+import { borderRadius } from '../settings/style/style-util';
+import style from '../settings/style/withDirection';
 
 const ColorChooserDropdown = styled.div`
   display: flex;
@@ -32,4 +32,4 @@ const ColorChooserDropdown = styled.div`
   }
 `;
 
-export default WithDirection(ColorChooserDropdown);
+export default style(ColorChooserDropdown);

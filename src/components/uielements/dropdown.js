@@ -1,6 +1,6 @@
 import { Dropdown, Menu } from 'antd';
 import DropdownWrapper, { DropdownMenus } from './styles/dropdown.style';
-import WithDirection from '../../settings/withDirection';
+import WithDirection from '../../settings/style/withDirection';
 
 const WDDropdowns = DropdownWrapper(Dropdown);
 const Dropdowns = WithDirection(WDDropdowns);

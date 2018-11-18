@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import { transition } from '../../settings/style-util';
-import WithDirection from '../../settings/withDirection';
+import { transition } from '../../settings/style/style-util';
+import style from '../../settings/style/withDirection';
 
 const MailPagination = styled.div`
   display: -webkit-flex;
@@ -48,4 +48,4 @@ const MailPagination = styled.div`
   }
 `;
 
-export default WithDirection(MailPagination);
+export default style(MailPagination);

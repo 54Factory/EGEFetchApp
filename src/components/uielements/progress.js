@@ -1,8 +1,8 @@
 import { Progress } from 'antd';
 import AntProgress from './styles/progress.style';
-import WithDirection from '../../settings/withDirection';
+import withDirection from '../../settings/style/withDirection';
 
 const WDProgress = AntProgress(Progress);
-const isoProgress = WithDirection(WDProgress);
+const isoProgress = withDirection(WDProgress);
 
 export default isoProgress;

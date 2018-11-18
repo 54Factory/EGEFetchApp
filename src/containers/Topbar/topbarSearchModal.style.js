@@ -1,7 +1,7 @@
 import Modal from "../../components/feedback/modal";
 import styled from "styled-components";
 import { palette } from "styled-theme";
-import WithDirection from "../../settings/withDirection";
+import style from "../../settings/style/withDirection";
 
 const TopbarSearchModal = styled(Modal)`
   &.ant-modal {
@@ -82,4 +82,4 @@ const TopbarSearchModal = styled(Modal)`
   }
 `;
 
-export default WithDirection(TopbarSearchModal);
+export default style(TopbarSearchModal);

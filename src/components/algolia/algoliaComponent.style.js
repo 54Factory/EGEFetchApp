@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette, font } from 'styled-theme';
-import { transition, borderRadius, boxShadow } from '../../settings/style-util';
-import WithDirection from '../../settings/withDirection';
+import { transition, borderRadius, boxShadow } from '../../settings//src/settings/style/';
+import style from '../../settings/style/withDirection';
 
 const WDSidebarWrapper = styled.div`
   width: 340px;
@@ -878,12 +878,12 @@ const PaginationStyleWrapper = styled.div`
   }
 `;
 
-const SidebarWrapper = WithDirection(WDSidebarWrapper);
-const ContentWrapper = WithDirection(WDContentWrapper);
-const VoiceSearchWrapper = WithDirection(WDVoiceSearchWrapper);
-const GridListViewWrapper = WithDirection(WDGridListViewWrapper);
-const TopbarWrapper = WithDirection(WDTopbarWrapper);
-const FooterWrapper = WithDirection(WDFooterWrapper);
+const SidebarWrapper = style(WDSidebarWrapper);
+const ContentWrapper = style(WDContentWrapper);
+const VoiceSearchWrapper = style(WDVoiceSearchWrapper);
+const GridListViewWrapper = style(WDGridListViewWrapper);
+const TopbarWrapper = style(WDTopbarWrapper);
+const FooterWrapper = style(WDFooterWrapper);
 
 export {
   SidebarWrapper,
