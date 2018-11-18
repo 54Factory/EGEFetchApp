@@ -16,7 +16,12 @@ const rrfConfig = {
   userProfile: 'users',
   attachAuthIsReady: true,
   useFirestoreForProfile: true,
-  updateProfileOnLogin: false
-}
+  // updateProfileOnLogin: false // enable/disable updating of profile on login
+  // profileDecorator: (userData) => ({ email: userData.email }) // customize format of user profile
+  updateProfileOnLogin: false, // enable/disable updating of profile on login
+  presence: 'presence', // list currently online users under "presence" path in RTDB
+  sessions: null, // Skip storing of sessions
+  enableLogging: true // enable/disable Firebase Database Logging
+  }
 
 export { firebaseConfig, googleConfig, rrfConfig }

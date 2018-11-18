@@ -4,6 +4,7 @@ import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import createHistory from 'history/createBrowserHistory';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
+import {reducer as FormReducer} from 'redux-form'
 import thunk from 'redux-thunk';
 import reducers from '../redux/reducers';
 import firebase from 'firebase/app'
@@ -42,6 +43,8 @@ const store = createStore(
     router: routerReducer,
     firebase: firebaseReducer,
     firestore: firestoreReducer,
+    form: FormReducer,
+
     
   }),
     composeEnhancers
