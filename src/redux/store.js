@@ -12,10 +12,11 @@ import 'firebase/auth'
 import 'firebase/database'
 import 'firebase/firestore' // make sure you add this for firestore
 import { rrfConfig, firebaseConfig } from '../settings/firebase'
-
+import {reducer as toastrReducer} from 'react-redux-toastr'
+import authReducer from './auth/reducer';
 import { firebaseReducer } from 'react-redux-firebase'
 import { firestoreReducer } from 'redux-firestore'
-
+import appReducer from './app/reducer';
 
 
 const history = createHistory();
@@ -44,8 +45,9 @@ const store = createStore(
     firebase: firebaseReducer,
     firestore: firestoreReducer,
     form: FormReducer,
-
-    
+    auth: authReducer,
+    toastr: toastrReducer,
+    app: appReducer
   }),
     composeEnhancers
   );
