@@ -2,7 +2,8 @@ import { LOGIN, SIGN_OUT_USER, LOGGED_IN_USER } from './authConstants'
 import { createReducer } from '../reduxHelper';
 
 const initialState = {
-  currentUser: {}
+  currentUser: {},
+  authenticated: false
 }
 
 export const login = (state, user) => {

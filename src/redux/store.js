@@ -50,8 +50,7 @@ const store = createStore(
     app: appReducer
   }),
     composeEnhancers
-  );
-
+  );  
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
@@ -59,12 +58,9 @@ const store = createStore(
       store.replaceReducer(nextRootReducer)
     })
   }
-
   return store
 }
-
-export {history}
-
+export { history }
 
 
 // import { createStore, combineReducers, applyMiddleware, compose } from 'redux';

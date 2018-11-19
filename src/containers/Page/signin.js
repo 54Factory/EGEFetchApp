@@ -9,7 +9,7 @@ import IntlMessages from '../../components/utility/intlMessages';
 import SignInStyleWrapper from './signin.style';
 import { Field, reduxForm } from 'redux-form';
 import { Form } from 'antd';
-//import LoginForm from '../Auth/Forms/LoginForm';
+import LoginForm from '../Auth/Forms/LoginForm';
 
 const actions = {
   login,
@@ -60,10 +60,10 @@ class SignIn extends Component {
               </Link>
             </div>
             <div className="isoSignInForm">
-            {/* <LoginForm />
+            <LoginForm />
             <Button type="warning" onClick={signOutUser}>
                   <IntlMessages id="page.signInButton" />
-                </Button> */}
+                </Button>
             <Form>
             <div className="isoInputWrapper">
                 <Field
@@ -118,7 +118,7 @@ class SignIn extends Component {
 
 export default connect(
   state => ({
-    isLoggedIn: state.firebase.auth.uid !== null ? true : false
+    isLoggedIn: state.auth.authenticated === true
   }),
   actions
 )(reduxForm({form: 'loginForm'})(SignIn));

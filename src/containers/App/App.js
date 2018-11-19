@@ -23,6 +23,8 @@ export class App extends Component {
     const { url } = this.props.match;
     const { height } = this.props;
     const appHeight = window.innerHeight;
+    console.log(this.props);
+    
     return (
       <ThemeProvider theme={themes[themeConfig.theme]}>
         <AppHolder>
@@ -77,8 +79,7 @@ export class App extends Component {
 
 export default connect(
   state => ({
-    auth: state.firebase.auth.uid !== null,
-
+    auth: state.auth.authenticated,
     height: state.app.height
   }),
   { signOutUser, toggleAll }

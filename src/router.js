@@ -52,5 +52,5 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
 };
 
 export default connect(state => ({
-  isLoggedIn: state.firebase.auth.uid !== null
+  isLoggedIn: state.auth.authenticated === true
 }))(PublicRoutes);

@@ -1,7 +1,7 @@
-import auth from './auth/reducer';
+//import auth from './auth/reducer';
 import app from './app/reducer';
 
 export default {
-  auth,
+ // auth,
   app,
 };
