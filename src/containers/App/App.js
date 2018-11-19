@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 import { Debounce } from 'react-throttle';
 import WindowResizeListener from 'react-window-size-listener';
 import { ThemeProvider } from 'styled-components';
-import {signOutUser} from '../../redux/auth/actions';
+import { signOutUser } from '../../redux/auth/actions';
 import appActions from '../../redux/app/actions';
 import Sidebar from '../Sidebar/Sidebar';
 import Topbar from '../Topbar/Topbar';
@@ -16,7 +16,7 @@ import AppHolder from './commonStyle';
 import './global.css';
 
 const { Content, Footer } = Layout;
-const { logout } = signOutUser;
+
 const { toggleAll } = appActions;
 export class App extends Component {
   render() {
@@ -77,8 +77,9 @@ export class App extends Component {
 
 export default connect(
   state => ({
-    auth: state.auth,
+    auth: state.firebase.auth.uid !== null,
+
     height: state.app.height
   }),
-  { logout, toggleAll }
+  { signOutUser, toggleAll }
 )(App);

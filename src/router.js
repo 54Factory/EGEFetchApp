@@ -1,27 +1,28 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
+import { connect } from 'react-redux';
 
 import App from './containers/App/App';
 import asyncComponent from './helpers/AsyncFunc';
 
-// const RestrictedRoute = ({ component: Component, isLoggedIn, ...rest }) => (
-//   <Route
-//     {...rest}
-//     render={props =>
-//       isLoggedIn ? (
-//         <Component {...props} />
-//       ) : (
-//         <Redirect
-//           to={{
-//             pathname: '/signin',
-//             state: { from: props.location }
-//           }}
-//         />
-//       )
-//     }
-//   />
-// );
+const RestrictedRoute = ({ component: Component, isLoggedIn, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      isLoggedIn ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/signin',
+            state: { from: props.location }
+          }}
+        />
+      )
+    }
+  />
+);
 const PublicRoutes = ({ history, isLoggedIn }) => {
   return (
     <ConnectedRouter history={history}>
@@ -29,7 +30,7 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
         <Route
           exact
           path={'/'}
-          component={asyncComponent(() => import('./containers/Page/splash'))}
+          component={asyncComponent(() => import('./containers/Page/signin'))}
         />
         <Route
           exact
@@ -39,16 +40,17 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
         <Route
           path="/dashboard"
           component={App}
-          //isLoggedIn={isLoggedIn}
         />
-        {/* <RestrictedRoute
+        <RestrictedRoute
           path="/dashboard"
           component={App}
           isLoggedIn={isLoggedIn}
-        /> */}
+        />
       </div>
     </ConnectedRouter>
   );
 };
 
-export default (PublicRoutes);
+export default connect(state => ({
+  isLoggedIn: state.firebase.auth.uid !== null
+}))(PublicRoutes);

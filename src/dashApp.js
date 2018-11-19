@@ -11,7 +11,7 @@ import config, { getCurrentLanguage } from "./containers/LanguageSwitcher/config
 import { themeConfig } from "./settings";
 import DashAppHolder from "./dashAppStyle";
 
-const initialState = window.__INITIAL_STATE__ || { firebase: { authError: null } }
+const initialState = window.__INITIAL_STATE__ || { auth: { currentUser: {} } }
 const store = configureStore(initialState)
 
 const currentAppLocale =

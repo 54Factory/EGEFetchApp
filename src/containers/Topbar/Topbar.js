@@ -11,20 +11,12 @@ const { Header } = Layout;
 const { toggleCollapsed } = appActions;
 const customizedTheme = themes[themeConfig.theme];
 
-const mapState = (state) => ({
-  auth: state.firebase.auth,
-  user: state.firebase.profile
-})
-
 
 class Topbar extends Component {
 
   
   render() {
     const { toggleCollapsed } = this.props;
-    console.log('====================================');
-    console.log(this.state);
-    console.log('====================================');
     const collapsed = this.props.collapsed && !this.props.openDrawer;
     const styling = {
       background: customizedTheme.backgroundColor,
@@ -64,4 +56,9 @@ class Topbar extends Component {
   }
 }
 
-export default connect(mapState, { toggleCollapsed })(Topbar);
+export default connect(
+  state => ({
+    ...state.app
+  }),
+  { toggleCollapsed }
+)(Topbar);

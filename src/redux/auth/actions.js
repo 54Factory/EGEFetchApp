@@ -1,3 +1,4 @@
+import { LOGGED_IN_USER } from './authConstants'
 import { SubmissionError } from 'redux-form';
 
 export const login = (creds) => {
@@ -5,10 +6,12 @@ export const login = (creds) => {
   
     const firebase = getFirebase();
     try {
-      let userLoggingIn = await firebase.auth().signInWithEmailAndPassword(creds.email, creds.password)
-
-      console.log(userLoggingIn);
-      
+      let user = await firebase.auth().signInWithEmailAndPassword(creds.email, creds.password)
+        await firebase.auth().signInWithEmailAndPassword(creds.email, creds.password)
+        .then(() => {
+          dispatch({type: LOGGED_IN_USER, payload: {user}})
+          console.log(user);
+        })
       
     } catch (error) {
       console.log(error);
@@ -18,6 +21,20 @@ export const login = (creds) => {
     }
   }
 }
+
+export const signOutUser = () => {
+  return async (dispatch, getState, {getFirebase, getFirestore}) => {
+  const firebase = getFirebase()
+
+  try {
+      await firebase.auth().signOut();
+   
+  } catch (e) {
+      console.log(e);
+  }
+}
+}
+
 
 export const socialLogin = (selectedProvider) =>
 async (dispatch, getState, {getFirebase, getFirestore}) => {
@@ -35,6 +52,7 @@ async (dispatch, getState, {getFirebase, getFirestore}) => {
         createdAt: firestore.FieldValue.serverTimestamp()
       })
     }
+    dispatch({type: LOGGED_IN_USER, payload: {user}})
     console.log('====================================');
     console.log(user);
     console.log('====================================');
@@ -42,13 +60,4 @@ async (dispatch, getState, {getFirebase, getFirestore}) => {
     console.log(error)
   }
 }
-
-export const signOutUser = (state) => {
-  return {
-    ...state,
-    authenticated: false,
-    currentUser: {}
-  }
-}
-
 

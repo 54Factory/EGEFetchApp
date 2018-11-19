@@ -6,7 +6,9 @@ import userpic from '../../image/user1.png';
 import {signOutUser} from '../../redux/auth/actions';
 import TopbarDropdownWrapper from './topbarDropdown.style';
 
-const { logout } = signOutUser;
+const actions = {
+  signOutUser
+};
 
 class TopbarUser extends Component {
   constructor(props) {
@@ -25,6 +27,7 @@ class TopbarUser extends Component {
   }
 
   render() {
+    const { signOutUser } = this.props;
     const content = (
       <TopbarDropdownWrapper className="isoUserDropdown">
         <a className="isoDropdownLink" href="# ">
@@ -36,7 +39,7 @@ class TopbarUser extends Component {
         <a className="isoDropdownLink" href="# ">
           <IntlMessages id="topbar.help" />
         </a>
-        <a className="isoDropdownLink" onClick={this.props.logout} href="/">
+        <a className="isoDropdownLink" onClick={signOutUser} href="/signin">
           <IntlMessages id="topbar.logout" />
         </a>
       </TopbarDropdownWrapper>
@@ -61,5 +64,5 @@ class TopbarUser extends Component {
 }
 export default connect(
   null,
-  { logout }
+  actions
 )(TopbarUser);

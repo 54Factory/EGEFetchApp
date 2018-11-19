@@ -1,22 +1,33 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Input from '../../components/uielements/input';
+import TextInput from '../Auth/Forms/components/textInput';
 import Checkbox from '../../components/uielements/checkbox';
 import Button from '../../components/uielements/button';
-import {login} from '../../redux/auth/actions';
+import { login, socialLogin, signOutUser } from '../../redux/auth/actions';
 import IntlMessages from '../../components/utility/intlMessages';
 import SignInStyleWrapper from './signin.style';
+import { Field, reduxForm } from 'redux-form';
+import { Form } from 'antd';
+//import LoginForm from '../Auth/Forms/LoginForm';
 
-
+const actions = {
+  login,
+  socialLogin,
+  signOutUser
+}
 
 class SignIn extends Component {
   
   state = {
     redirectToReferrer: false
   };
-
-
+  
+  componentDidMount() {
+    if(this.props.isLoggedIn) {
+      this.setState({ redirectToReferrer: true });
+    }
+  }
   componentWillReceiveProps(nextProps) {
     if (
       this.props.isLoggedIn !== nextProps.isLoggedIn &&
@@ -26,19 +37,16 @@ class SignIn extends Component {
     }
   }
 
-
   handleLogin = () => {
     const { login } = this.props;
-    console.log(login, 'Login Button Clicked');
-    localStorage.setItem('id_token', 'secret token');
+    login();
     this.props.history.push('/dashboard');
   };
-
   
   render() {
     const from = { pathname: '/dashboard' };
     const { redirectToReferrer } = this.state;
-
+    const { login } = this.props
     if (redirectToReferrer) {
       return <Redirect to={from} />;
     }
@@ -52,17 +60,33 @@ class SignIn extends Component {
               </Link>
             </div>
             <div className="isoSignInForm">
-              <div className="isoInputWrapper">
-                <Input size="large" placeholder="Username" />
-              </div>
-              <div className="isoInputWrapper">
-                <Input size="large" type="password" placeholder="Password" />
+            {/* <LoginForm />
+            <Button type="warning" onClick={signOutUser}>
+                  <IntlMessages id="page.signInButton" />
+                </Button> */}
+            <Form>
+            <div className="isoInputWrapper">
+                <Field
+                  name="email"
+                  component={TextInput}
+                  type="text"
+                  placeholder="Email Address"
+                />
+                </div>
+            <div className="isoInputWrapper">
+
+                <Field
+                  name="password"
+                  component={TextInput}
+                  type="password"
+                  placeholder="Password"
+                />
               </div>
               <div className="isoInputWrapper isoLeftRightComponent">
                 <Checkbox>
                   <IntlMessages id="page.signInRememberMe" />
                 </Checkbox>
-                <Button type="primary" onClick={this.handleLogin}>
+                <Button type="primary" onClick={login}>
                   <IntlMessages id="page.signInButton" />
                 </Button>
               </div>
@@ -70,7 +94,7 @@ class SignIn extends Component {
                 <IntlMessages id="page.signInPreview" />
               </p>
               <div className="isoInputWrapper isoOtherLogin">
-                <Button onClick={this.handleLogin} type="primary btnGooglePlus">
+                <Button onClick={socialLogin} type="primary btnGooglePlus">
                   <IntlMessages id="page.signInGooglePlus" />
                 </Button>
               </div>
@@ -82,6 +106,8 @@ class SignIn extends Component {
                   <IntlMessages id="page.signInCreateAccount" />
                 </Link>
               </div>
+            </Form>
+
             </div>
           </div>
         </div>
@@ -92,7 +118,7 @@ class SignIn extends Component {
 
 export default connect(
   state => ({
-    isLoggedIn: state.Auth.idToken !== null ? true : false
+    isLoggedIn: state.firebase.auth.uid !== null ? true : false
   }),
-  { login }
-)(SignIn);
+  actions
+)(reduxForm({form: 'loginForm'})(SignIn));
