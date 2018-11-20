@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import TextInput from '../Auth/Forms/components/textInput';
+import TextInput from '../Auth/Forms/formComponents/textInput';
 import Checkbox from '../../components/uielements/checkbox';
 import Button from '../../components/uielements/button';
 import { login, socialLogin, signOutUser } from '../../redux/auth/actions';

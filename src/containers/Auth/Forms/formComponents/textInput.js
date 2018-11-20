@@ -1,6 +1,7 @@
 import React from 'react'
 import { Input } from 'antd'
 
+
 const TextInput = ({input, width, type, placeholder, meta: {touched, error}}) => {
   return (
 
